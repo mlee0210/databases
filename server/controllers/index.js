@@ -3,14 +3,13 @@ var models = require('../models');
 module.exports = {
   messages: {
     get: function (req, res) {
-      // console.log('inside controller.messages.get');
       models.messages.get((err, data) => {
         if (err) {
           throw (err);
         } else {
           res.send(JSON.stringify(data));
         }
-      })
+      });
     }, // a function which handles a get request for all messages
     post: function (req, res) {
       let messageData = req.body;
@@ -20,7 +19,7 @@ module.exports = {
         } else {
           res.send(result);
         }
-      })
+      });
     } // a function which handles posting a message to the database
   },
 
@@ -33,7 +32,7 @@ module.exports = {
         } else {
           res.send(JSON.stringify(data));
         }
-      })
+      });
     },
     post: function (req, res) {
       console.log(req.body);
@@ -44,7 +43,7 @@ module.exports = {
         } else {
           res.send(result);
         }
-      })
+      });
     }
   }
 };

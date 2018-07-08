@@ -38,7 +38,7 @@ module.exports = {
       db.query(`INSERT INTO usernames(username) VALUES('${messageData.username}')`,
       (result) => {
         callback(null, result);
-      } );
+      });
     }
   }
 };
